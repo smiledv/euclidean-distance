@@ -1,0 +1,396 @@
+install.packages("AGHmatrix")
+library(AGHmatrix)
+data <- as.matrix(read.table("SNP.txt", header = F))
+SNP <- Gmatrix(SNPmatrix=data, missingValue=-9, ploidy = 2,
+                          maf=0, method="VanRaden")
+
+data0.15 <- as.matrix(read.table("hap0.15.txt", header = F))
+hap0.15 <- Gmatrix(SNPmatrix=data0.15, missingValue=-9, ploidy = 2,
+               maf=0, method="VanRaden")
+
+data0.2 <- as.matrix(read.table("hap0.2.txt", header = F))
+hap0.2 <- Gmatrix(SNPmatrix=data0.2, missingValue=-9, ploidy = 2,
+                   maf=0, method="VanRaden")
+
+data0.3 <- as.matrix(read.table("hap0.3.txt", header = F))
+hap0.3 <- Gmatrix(SNPmatrix=data0.3, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.4 <- as.matrix(read.table("hap0.4.txt", header = F))
+hap0.4 <- Gmatrix(SNPmatrix=data0.4, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.5 <- as.matrix(read.table("hap0.5.txt", header = F))
+hap0.5 <- Gmatrix(SNPmatrix=data0.5, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.6 <- as.matrix(read.table("hap0.6.txt", header = F))
+hap0.6 <- Gmatrix(SNPmatrix=data0.6, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.7 <- as.matrix(read.table("hap0.7.txt", header = F))
+hap0.7 <- Gmatrix(SNPmatrix=data0.7, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.8 <- as.matrix(read.table("hap0.8.txt", header = F))
+hap0.8 <- Gmatrix(SNPmatrix=data0.8, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data0.9 <- as.matrix(read.table("hap0.9.txt", header = F))
+hap0.9 <- Gmatrix(SNPmatrix=data0.9, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data1.0 <- as.matrix(read.table("hap1.0.txt", header = F))
+hap1.0 <- Gmatrix(SNPmatrix=data1.0, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+#combination
+data_0.15 <- as.matrix(read.table("com0.15.txt", header = F))
+com0.15 <- Gmatrix(SNPmatrix=data_0.15, missingValue=-9, ploidy = 2,
+                   maf=0, method="VanRaden")
+
+data_0.2 <- as.matrix(read.table("com0.2.txt", header = F))
+com0.2 <- Gmatrix(SNPmatrix=data_0.2, missingValue=-9, ploidy = 2,
+                   maf=0, method="VanRaden")
+
+data_0.3 <- as.matrix(read.table("com0.3.txt", header = F))
+com0.3 <- Gmatrix(SNPmatrix=data_0.3, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.4 <- as.matrix(read.table("com0.4.txt", header = F))
+com0.4 <- Gmatrix(SNPmatrix=data_0.4, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.5 <- as.matrix(read.table("com0.5.txt", header = F))
+com0.5 <- Gmatrix(SNPmatrix=data_0.5, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.6 <- as.matrix(read.table("com0.6.txt", header = F))
+com0.6 <- Gmatrix(SNPmatrix=data_0.6, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.7 <- as.matrix(read.table("com0.7.txt", header = F))
+com0.7 <- Gmatrix(SNPmatrix=data_0.7, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.8 <- as.matrix(read.table("com0.8.txt", header = F))
+com0.8 <- Gmatrix(SNPmatrix=data_0.8, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_0.9 <- as.matrix(read.table("com0.9.txt", header = F))
+com0.9 <- Gmatrix(SNPmatrix=data_0.9, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+data_1.0 <- as.matrix(read.table("com_1.0.txt", header = F))
+com1.0 <- Gmatrix(SNPmatrix=data_1.0, missingValue=-9, ploidy = 2,
+                  maf=0, method="VanRaden")
+
+
+euclidean_dist <- function(x, y) sqrt(sum((x - y)^2))
+
+
+#SNP
+euclidean_dist(SNP,hap0.15)
+euclidean_dist(SNP,hap0.2)
+euclidean_dist(SNP,hap0.3)
+euclidean_dist(SNP,hap0.4)
+euclidean_dist(SNP,hap0.5)
+euclidean_dist(SNP,hap0.6)
+euclidean_dist(SNP,hap0.7)
+euclidean_dist(SNP,hap0.8)
+euclidean_dist(SNP,hap0.9)
+euclidean_dist(SNP,hap1.0)
+euclidean_dist(SNP,com0.15)
+euclidean_dist(SNP,com0.2)
+euclidean_dist(SNP,com0.3)
+euclidean_dist(SNP,com0.4)
+euclidean_dist(SNP,com0.5)
+euclidean_dist(SNP,com0.6)
+euclidean_dist(SNP,com0.7)
+euclidean_dist(SNP,com0.8)
+euclidean_dist(SNP,com0.9)
+euclidean_dist(SNP,com1.0)
+
+#HAP0.15
+euclidean_dist(hap0.15,hap0.2)
+euclidean_dist(hap0.15,hap0.3)
+euclidean_dist(hap0.15,hap0.4)
+euclidean_dist(hap0.15,hap0.5)
+euclidean_dist(hap0.15,hap0.6)
+euclidean_dist(hap0.15,hap0.7)
+euclidean_dist(hap0.15,hap0.8)
+euclidean_dist(hap0.15,hap0.9)
+euclidean_dist(hap0.15,hap1.0)
+euclidean_dist(hap0.15,com0.15)
+euclidean_dist(hap0.15,com0.2)
+euclidean_dist(hap0.15,com0.3)
+euclidean_dist(hap0.15,com0.4)
+euclidean_dist(hap0.15,com0.5)
+euclidean_dist(hap0.15,com0.6)
+euclidean_dist(hap0.15,com0.7)
+euclidean_dist(hap0.15,com0.8)
+euclidean_dist(hap0.15,com0.9)
+euclidean_dist(hap0.15,com1.0)
+
+#HAP0.2
+euclidean_dist(hap0.2,hap0.3)
+euclidean_dist(hap0.2,hap0.4)
+euclidean_dist(hap0.2,hap0.5)
+euclidean_dist(hap0.2,hap0.6)
+euclidean_dist(hap0.2,hap0.7)
+euclidean_dist(hap0.2,hap0.8)
+euclidean_dist(hap0.2,hap0.9)
+euclidean_dist(hap0.2,hap1.0)
+euclidean_dist(hap0.2,com0.15)
+euclidean_dist(hap0.2,com0.2)
+euclidean_dist(hap0.2,com0.3)
+euclidean_dist(hap0.2,com0.4)
+euclidean_dist(hap0.2,com0.5)
+euclidean_dist(hap0.2,com0.6)
+euclidean_dist(hap0.2,com0.7)
+euclidean_dist(hap0.2,com0.8)
+euclidean_dist(hap0.2,com0.9)
+euclidean_dist(hap0.2,com1.0)
+
+
+#HAP0.3
+euclidean_dist(hap0.3,hap0.4)
+euclidean_dist(hap0.3,hap0.5)
+euclidean_dist(hap0.3,hap0.6)
+euclidean_dist(hap0.3,hap0.7)
+euclidean_dist(hap0.3,hap0.8)
+euclidean_dist(hap0.3,hap0.9)
+euclidean_dist(hap0.3,hap1.0)
+euclidean_dist(hap0.3,com0.15)
+euclidean_dist(hap0.3,com0.2)
+euclidean_dist(hap0.3,com0.3)
+euclidean_dist(hap0.3,com0.4)
+euclidean_dist(hap0.3,com0.5)
+euclidean_dist(hap0.3,com0.6)
+euclidean_dist(hap0.3,com0.7)
+euclidean_dist(hap0.3,com0.8)
+euclidean_dist(hap0.3,com0.9)
+euclidean_dist(hap0.3,com1.0)
+
+#HAP0.4
+euclidean_dist(hap0.4,hap0.5)
+euclidean_dist(hap0.4,hap0.6)
+euclidean_dist(hap0.4,hap0.7)
+euclidean_dist(hap0.4,hap0.8)
+euclidean_dist(hap0.4,hap0.9)
+euclidean_dist(hap0.4,hap1.0)
+euclidean_dist(hap0.4,com0.15)
+euclidean_dist(hap0.4,com0.2)
+euclidean_dist(hap0.4,com0.3)
+euclidean_dist(hap0.4,com0.4)
+euclidean_dist(hap0.4,com0.5)
+euclidean_dist(hap0.4,com0.6)
+euclidean_dist(hap0.4,com0.7)
+euclidean_dist(hap0.4,com0.8)
+euclidean_dist(hap0.4,com0.9)
+euclidean_dist(hap0.4,com1.0)
+
+#HAP0.5
+euclidean_dist(hap0.5,hap0.6)
+euclidean_dist(hap0.5,hap0.7)
+euclidean_dist(hap0.5,hap0.8)
+euclidean_dist(hap0.5,hap0.9)
+euclidean_dist(hap0.5,hap1.0)
+euclidean_dist(hap0.5,com0.15)
+euclidean_dist(hap0.5,com0.2)
+euclidean_dist(hap0.5,com0.3)
+euclidean_dist(hap0.5,com0.4)
+euclidean_dist(hap0.5,com0.5)
+euclidean_dist(hap0.5,com0.6)
+euclidean_dist(hap0.5,com0.7)
+euclidean_dist(hap0.5,com0.8)
+euclidean_dist(hap0.5,com0.9)
+euclidean_dist(hap0.5,com1.0)
+
+#HAP0.6
+euclidean_dist(hap0.6,hap0.7)
+euclidean_dist(hap0.6,hap0.8)
+euclidean_dist(hap0.6,hap0.9)
+euclidean_dist(hap0.6,hap1.0)
+euclidean_dist(hap0.6,com0.15)
+euclidean_dist(hap0.6,com0.2)
+euclidean_dist(hap0.6,com0.3)
+euclidean_dist(hap0.6,com0.4)
+euclidean_dist(hap0.6,com0.5)
+euclidean_dist(hap0.6,com0.6)
+euclidean_dist(hap0.6,com0.7)
+euclidean_dist(hap0.6,com0.8)
+euclidean_dist(hap0.6,com0.9)
+euclidean_dist(hap0.6,com1.0)
+
+#HAP0.7
+euclidean_dist(hap0.7,hap0.8)
+euclidean_dist(hap0.7,hap0.9)
+euclidean_dist(hap0.7,hap1.0)
+euclidean_dist(hap0.7,com0.15)
+euclidean_dist(hap0.7,com0.2)
+euclidean_dist(hap0.7,com0.3)
+euclidean_dist(hap0.7,com0.4)
+euclidean_dist(hap0.7,com0.5)
+euclidean_dist(hap0.7,com0.6)
+euclidean_dist(hap0.7,com0.7)
+euclidean_dist(hap0.7,com0.8)
+euclidean_dist(hap0.7,com0.9)
+euclidean_dist(hap0.7,com1.0)
+
+#HAP0.8
+euclidean_dist(hap0.8,hap0.9)
+euclidean_dist(hap0.8,hap1.0)
+euclidean_dist(hap0.8,com0.15)
+euclidean_dist(hap0.8,com0.2)
+euclidean_dist(hap0.8,com0.3)
+euclidean_dist(hap0.8,com0.4)
+euclidean_dist(hap0.8,com0.5)
+euclidean_dist(hap0.8,com0.6)
+euclidean_dist(hap0.8,com0.7)
+euclidean_dist(hap0.8,com0.8)
+euclidean_dist(hap0.8,com0.9)
+euclidean_dist(hap0.8,com1.0)
+
+#HAP0.9
+euclidean_dist(hap0.9,hap1.0)
+euclidean_dist(hap0.9,com0.15)
+euclidean_dist(hap0.9,com0.2)
+euclidean_dist(hap0.9,com0.3)
+euclidean_dist(hap0.9,com0.4)
+euclidean_dist(hap0.9,com0.5)
+euclidean_dist(hap0.9,com0.6)
+euclidean_dist(hap0.9,com0.7)
+euclidean_dist(hap0.9,com0.8)
+euclidean_dist(hap0.9,com0.9)
+euclidean_dist(hap0.9,com1.0)
+
+#HAP1.0
+euclidean_dist(hap1.0,com0.15)
+euclidean_dist(hap1.0,com0.2)
+euclidean_dist(hap1.0,com0.3)
+euclidean_dist(hap1.0,com0.4)
+euclidean_dist(hap1.0,com0.5)
+euclidean_dist(hap1.0,com0.6)
+euclidean_dist(hap1.0,com0.7)
+euclidean_dist(hap1.0,com0.8)
+euclidean_dist(hap1.0,com0.9)
+euclidean_dist(hap1.0,com1.0)
+
+#COM0.15
+euclidean_dist(com0.15,com0.2)
+euclidean_dist(com0.15,com0.3)
+euclidean_dist(com0.15,com0.4)
+euclidean_dist(com0.15,com0.5)
+euclidean_dist(com0.15,com0.6)
+euclidean_dist(com0.15,com0.7)
+euclidean_dist(com0.15,com0.8)
+euclidean_dist(com0.15,com0.9)
+euclidean_dist(com0.15,com1.0)
+
+#COM0.2
+euclidean_dist(com0.2,com0.3)
+euclidean_dist(com0.2,com0.4)
+euclidean_dist(com0.2,com0.5)
+euclidean_dist(com0.2,com0.6)
+euclidean_dist(com0.2,com0.7)
+euclidean_dist(com0.2,com0.8)
+euclidean_dist(com0.2,com0.9)
+euclidean_dist(com0.2,com1.0)
+
+#COM0.3
+euclidean_dist(com0.3,com0.4)
+euclidean_dist(com0.3,com0.5)
+euclidean_dist(com0.3,com0.6)
+euclidean_dist(com0.3,com0.7)
+euclidean_dist(com0.3,com0.8)
+euclidean_dist(com0.3,com0.9)
+euclidean_dist(com0.3,com1.0)
+
+#COM0.4
+euclidean_dist(com0.4,com0.5)
+euclidean_dist(com0.4,com0.6)
+euclidean_dist(com0.4,com0.7)
+euclidean_dist(com0.4,com0.8)
+euclidean_dist(com0.4,com0.9)
+euclidean_dist(com0.4,com1.0)
+
+
+#COM0.5
+euclidean_dist(com0.5,com0.6)
+euclidean_dist(com0.5,com0.7)
+euclidean_dist(com0.5,com0.8)
+euclidean_dist(com0.5,com0.9)
+euclidean_dist(com0.5,com1.0)
+
+#COM0.6
+euclidean_dist(com0.6,com0.7)
+euclidean_dist(com0.6,com0.8)
+euclidean_dist(com0.6,com0.9)
+euclidean_dist(com0.6,com1.0)
+
+#COM0.7
+euclidean_dist(com0.7,com0.8)
+euclidean_dist(com0.7,com0.9)
+euclidean_dist(com0.7,com1.0)
+
+#COM0.8
+euclidean_dist(com0.8,com0.9)
+euclidean_dist(com0.8,com1.0)
+
+euclidean_dist(com0.9,com1.0)
+
+upper_tri <- as.matrix(read.table("euc_dis.txt", header = F))
+
+colnames(upper_tri) <- c("HAP0.15","HAP0.20","HAP0.30","HAP0.40","HAP0.50",
+                         "HAP0.60","HAP0.70","HAP0.80","HAP0.90","HAP1.0",
+                         "COM0.15","COM0.20","COM0.30","COM0.40","COM0.50",
+                         "COM0.60","COM0.70","COM0.80","COM0.90","COM1.0")  
+
+rownames(upper_tri) <- c("SNP","HAP0.15","HAP0.20","HAP0.30","HAP0.40","HAP0.50",
+                         "HAP0.60","HAP0.70","HAP0.80","HAP0.90","HAP1.0",
+                         "COM0.15","COM0.20","COM0.30","COM0.40","COM0.50",
+                         "COM0.60","COM0.70","COM0.80","COM0.90") 
+
+get_upper_tri <- function(cormat){
+  cormat[lower.tri(cormat)]<- NA
+  return(cormat)
+}
+
+upper_tri <- get_upper_tri(upper_tri)
+
+
+library(reshape2)
+melted <- melt(upper_tri, na.rm = TRUE)
+head(melted)
+
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+
+melted$value <- range01(melted$value)
+melted$value <- formatC(melted$value, digits = 2, format = "f")
+melted$value <- as.numeric(melted$value)
+
+library(ggplot2)
+
+ggheatmap <- ggplot(melted, aes(Var2, Var1, fill = value))+
+  geom_tile(color = "white")+
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = 0.5, limit = c(0,1), space = "Lab", 
+                       name="Euclidean\nDistance") +
+  theme_minimal()+ # minimal theme
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                   size = 12, hjust = 1))+
+  coord_fixed()
+# Print the heatmap
+print(ggheatmap)
+
+ggheatmap + 
+  geom_text(aes(Var2, Var1, label = value), color = "black", size = 4) +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.ticks = element_blank())
+
